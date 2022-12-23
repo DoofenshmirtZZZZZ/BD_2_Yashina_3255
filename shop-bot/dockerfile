@@ -1,0 +1,7 @@
+FROM alpine
+WORKDIR /shop-bot
+COPY build/ .
+RUN apk add --no-cache ca-certificates
+RUN apk add libc6-compat
+RUN chmod +x shop-bot.exe
+CMD ./shop-bot.exe
